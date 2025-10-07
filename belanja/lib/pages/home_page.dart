@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
         title: const Text("Shopping List"),
       ),
 
-      // Ubah dari ListView → GridView
+      // GridView produk
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
@@ -40,51 +40,70 @@ class HomePage extends StatelessWidget {
             crossAxisCount: 2, // tampil 2 kolom
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
-            childAspectRatio: 0.75, // proporsi lebar : tinggi
+            childAspectRatio: 0.75,
           ),
           itemBuilder: (context, index) {
             final item = items[index];
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Gambar produk
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-                      child: Image.asset(
-                        item.image,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
+            return InkWell(
+              onTap: () {
+                // navigasi ke ItemPage + kirim data produk
+                Navigator.pushNamed(
+                  context,
+                  '/item',
+                  arguments: item,
+                );
+              },
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Tambah Hero di sekitar gambar
+                    Hero(
+                      tag: item.name, // tag unik agar animasi tersambung
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(10),
+                        ),
+                        child: Image.asset(
+                          item.image,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 120,
+                        ),
                       ),
                     ),
-                  ),
-                  // Informasi produk
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(item.name,
-                            style: const TextStyle(fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 4),
-                        Text("Rp ${item.price}"),
-                        Text("Stok: ${item.stock}"),
-                        Row(
-                          children: [
-                            const Icon(Icons.star, color: Colors.amber, size: 16),
-                            const SizedBox(width: 4),
-                            Text(item.rating.toString()),
-                          ],
-                        ),
-                      ],
+
+                    // Informasi produk
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item.name,
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 4),
+                          Text("Rp ${item.price}"),
+                          Text("Stok: ${item.stock}"),
+                          Row(
+                            children: [
+                              const Icon(Icons.star,
+                                  color: Colors.amber, size: 16),
+                              const SizedBox(width: 4),
+                              Text(item.rating.toString()),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },
