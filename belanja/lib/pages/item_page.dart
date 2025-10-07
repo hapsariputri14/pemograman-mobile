@@ -67,6 +67,21 @@ class ItemPage extends StatelessWidget {
           ),
         ),
       ),
+
+      // Menambahkan footer Nama & NIM 
+      bottomNavigationBar: Container(
+        color: Colors.blue.shade50,
+        padding: const EdgeInsets.all(8),
+        child: const Text(
+          'Nadya Hapsari Putri | 2341760179',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Colors.black87,
+          ),
+        ),
+      ),
     );
   }
 }
