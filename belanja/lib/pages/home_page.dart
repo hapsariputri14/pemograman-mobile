@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/item.dart';
-import '../widgets/item_card.dart'; // tambahkan import
+import '../widgets/item_card.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
                   return ItemCard(
                     item: item,
                     onTap: () {
-                      Navigator.pushNamed(context, '/item', arguments: item);
+                      context.push('/item', extra: item);
                     },
                   );
                 },
