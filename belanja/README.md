@@ -16,9 +16,12 @@ A new Flutter project.
 - Menampilkan daftar produk menggunakan `GridView` dan `Card`.  
 - Setiap item bisa ditekan dan menampilkan detail produk di halaman berikutnya.
 
-| Bukti 1 | Bukti 2 |
-|----------|----------|
-| ![Praktikum 5 - 1](screenshots/01.png) | ![Praktikum 5 - 2](screenshots/02.png) |
+## Hasil Akhir Praktikum 5
+Halaman Home Page
+![Praktikum 5 - 1](screenshots/01.png)  
+
+Halaman Item Page
+![Praktikum 5 - 2](screenshots/02.png) 
 
 ---
 
@@ -32,8 +35,11 @@ A new Flutter project.
 - Menambahkan **footer** dengan Nama dan NIM.  
 - Mencoba navigasi menggunakan plugin `go_router`.
 
-| Bukti 1 | Bukti 2 |
-|----------|----------|
-| ![Tugas 2 - 1](screenshots/03.png) | ![Tugas 2 - 2](screenshots/04.png) |
+## Hasil Akhir Tugas Praktikum 2
+Halaman Home Page
+![Tugas 2 - 1](screenshots/03.png) 
+
+Halaman Item Page
+![Tugas 2 - 2](screenshots/04.png) 
 
 ---
