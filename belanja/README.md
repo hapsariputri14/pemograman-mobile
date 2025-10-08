@@ -1,16 +1,39 @@
-# belanja
+# belanja - Jobsheet 5: Navigasi dan Rute
 
 A new Flutter project.
 
-## Getting Started
+**Nama:** Nadya Hapsari Putri  
+**NIM:** 2341760179  
+**Kelas:** SIB 3D
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Praktikum 5
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Penjelasan Singkat
+- Membuat dua halaman, yaitu `HomePage` dan `ItemPage`.  
+- Menambahkan navigasi menggunakan `Navigator.pushNamed` dan `ModalRoute` untuk mengirim data antar halaman.  
+- Menampilkan daftar produk menggunakan `GridView` dan `Card`.  
+- Setiap item bisa ditekan dan menampilkan detail produk di halaman berikutnya.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Bukti 1 | Bukti 2 |
+|----------|----------|
+| ![Praktikum 5 - 1](screenshots/01.png) | ![Praktikum 5 - 2](screenshots/02.png) |
+
+---
+
+## Tugas Praktikum 2
+
+### Penjelasan Singkat
+- Menambahkan atribut **gambar, stok, dan rating** pada model `Item`.  
+- Mengubah tampilan menjadi `GridView` seperti marketplace.  
+- Menambahkan animasi transisi gambar dengan `Hero widget`.  
+- Memecah widget ke file terpisah (`item_card.dart`) agar rapi.  
+- Menambahkan **footer** dengan Nama dan NIM.  
+- Mencoba navigasi menggunakan plugin `go_router`.
+
+| Bukti 1 | Bukti 2 |
+|----------|----------|
+| ![Tugas 2 - 1](screenshots/03.png) | ![Tugas 2 - 2](screenshots/04.png) |
+
+---
