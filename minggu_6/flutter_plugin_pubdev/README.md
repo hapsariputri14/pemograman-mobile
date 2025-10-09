@@ -1,16 +1,19 @@
 # flutter_plugin_pubdev
+Praktikum Jobsheet 6 – Menerapkan Plugin di Project Flutter
 
-A new Flutter project.
+## Hasil Praktikum
+Aplikasi berhasil dijalankan dan menampilkan dua teks berbeda:
+1. Teks merah di dalam kotak kuning menggunakan `AutoSizeText`.
+2. Teks biasa di dalam kotak hijau menggunakan widget `Text`.
 
-## Getting Started
+Berikut tampilan hasilnya:
+![Screenshot Hasil Praktikum](assets/screenshots/01.png)
 
-This project is a starting point for a Flutter application.
+## Penjelasan Singkat
+- **Langkah 1:** Membuat project Flutter baru bernama `flutter_plugin_pubdev` dan menambahkannya ke repository GitHub.  
+- **Langkah 2:** Menambahkan plugin `auto_size_text` agar dapat menggunakan widget teks yang otomatis menyesuaikan ukuran huruf.  
+- **Langkah 3–5:** Membuat file `red_text_widget.dart`, menambahkan `AutoSizeText`, serta menambahkan variabel `text` dan parameter konstruktor.  
+- **Langkah 6:** Menambahkan dua widget `Container` di `main.dart` untuk membandingkan hasil `AutoSizeText` dengan `Text` biasa.  
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Kesimpulan
+Praktikum berhasil dilakukan, aplikasi berjalan dengan baik, dan perbedaan antara `AutoSizeText` dan `Text` dapat terlihat dengan jelas.
