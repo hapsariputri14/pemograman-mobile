@@ -21,16 +21,16 @@ Pengguna dapat mengambil gambar menggunakan kamera, lalu aplikasi akan menampilk
 Berikut beberapa hasil tampilan aplikasi saat dijalankan di perangkat Android:
 
 ### Splash Screen
-![Splash](../screenshots/splash_screen.jpg)
+![Splash](screenshots/splash_screen.jpg)
 
 ### Home Screen
-![Home](../screenshots/home_screen.jpg)
+![Home](screenshots/home_screen.jpg)
 
 ### Scan Screen (kamera aktif)
-![Scan](../screenshots/scan_screen.jpg)
+![Scan](screenshots/scan_screen.jpg)
 
 ### Hasil OCR
-![Result](../screenshots/result_screen.jpg)
+![Result](screenshots/result_screen.jpg)
 
 Catatan: Gambar hasil dapat disimpan di folder `screenshots/` di dalam proyek agar muncul di README.
 
