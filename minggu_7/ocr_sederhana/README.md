@@ -32,8 +32,6 @@ Berikut beberapa hasil tampilan aplikasi saat dijalankan di perangkat Android:
 ### Hasil OCR
 ![Result](screenshots/result_screen.jpg)
 
-Catatan: Gambar hasil dapat disimpan di folder `screenshots/` di dalam proyek agar muncul di README.
-
 ---
 
 ## Penjelasan Singkat Kode
