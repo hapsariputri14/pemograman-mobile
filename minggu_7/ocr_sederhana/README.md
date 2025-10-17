@@ -1,16 +1,46 @@
-# ocr_sederhana
+# Proyek Flutter: Aplikasi OCR Sederhana
 
-A new Flutter project.
+---
 
-## Getting Started
+## Deskripsi Singkat
+Proyek ini merupakan latihan pemrograman mobile menggunakan Flutter pada pertemuan minggu ke-7.  
+Aplikasi ini dibuat untuk mengenali teks dari gambar (Optical Character Recognition / OCR) dengan memanfaatkan plugin **Google ML Kit Text Recognition**.
+Pengguna dapat mengambil gambar menggunakan kamera, lalu aplikasi akan menampilkan hasil teks yang terbaca dari gambar tersebut.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur Utama
+- Mengambil gambar langsung dari kamera.  
+- Melakukan proses OCR untuk mendeteksi teks dalam gambar.  
+- Menampilkan hasil teks pada halaman terpisah.  
+- Menggunakan navigasi antar halaman (Splash, Home, Scan, dan Result).   
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Hasil Tampilan Aplikasi
+Berikut beberapa hasil tampilan aplikasi saat dijalankan di perangkat Android:
+
+### Splash Screen
+![Splash](../screenshots/splash_screen.jpg)
+
+### Home Screen
+![Home](../screenshots/home_screen.jpg)
+
+### Scan Screen (kamera aktif)
+![Scan](../screenshots/scan_screen.jpg)
+
+### Hasil OCR
+![Result](../screenshots/result_screen.jpg)
+
+Catatan: Gambar hasil dapat disimpan di folder `screenshots/` di dalam proyek agar muncul di README.
+
+---
+
+## Penjelasan Singkat Kode
+Aplikasi ini terdiri dari empat layar utama:
+1. Splash Screen → Tampilan awal sebelum masuk ke menu utama.  
+2. Home Screen → Menyediakan tombol untuk memulai proses scan.  
+3. Scan Screen → Mengaktifkan kamera dan memproses OCR.  
+4. Result Screen → Menampilkan hasil teks yang berhasil dikenali.  
+
+
