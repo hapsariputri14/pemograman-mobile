@@ -76,7 +76,10 @@ class _ScanScreenState extends State<ScanScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error saat mengambil / memproses foto: $e')),
+        const SnackBar(
+          content:
+              Text('Pemindaian Gagal! Periksa Izin Kamera atau coba lagi.'),
+        ),
       );
     }
   }
@@ -84,8 +87,21 @@ class _ScanScreenState extends State<ScanScreen> {
   @override
   Widget build(BuildContext context) {
     if (!_controller.value.isInitialized) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        backgroundColor: Colors.grey[900],
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(color: Colors.yellow),
+              SizedBox(height: 16),
+              Text(
+                'Memuat Kamera... Harap tunggu.',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ],
+          ),
+        ),
       );
     }
 
