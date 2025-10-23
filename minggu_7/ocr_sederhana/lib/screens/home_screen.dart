@@ -10,19 +10,30 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Menu Utama'),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: const Icon(Icons.camera_alt, color: Colors.blue),
-            title: const Text('Mulai Pindai Teks Baru'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ScanScreen()),
-              );
-            },
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Card(
+            elevation: 2,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            // Membatasi lebar ListTile agar konten (ikon + teks) terlihat di tengah.
+            child: SizedBox(
+              width: 260, 
+              child: ListTile(
+                leading: const Icon(Icons.camera_alt, color: Colors.blue),
+                title: const Text('Mulai Pindai Teks Baru'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const ScanScreen()),
+                  );
+                },
+              ),
+            ),
           ),
-        ],
+        ),
       ),
     );
   }
