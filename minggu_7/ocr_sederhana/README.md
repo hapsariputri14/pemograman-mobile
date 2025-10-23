@@ -2,11 +2,10 @@
 
 --- 
 
-Nama : Nadya Hapsari Putri
-NIM : 2341760179
-Kelas : SIB 3D
-No.Absen : 16
-
+**Nama:** Nadya Hapsari Putri 
+**NIM:** 2341760179  
+**Kelas:** SIB 3D
+**No. Absen:** 16
 ---
 
 ## Deskripsi Singkat
