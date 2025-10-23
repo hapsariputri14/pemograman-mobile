@@ -92,7 +92,7 @@ Aplikasi Flutter ini berfungsi untuk **mengenali teks dari gambar (OCR)** menggu
 ### Home Screen
 ![Home](screenshots/home_screen_uts.jpg)
 
-### Splash Screen
+### Loading Page
 ![Loading](screenshots/loading_page_uts.jpg)
 
 ### Scan Screen
