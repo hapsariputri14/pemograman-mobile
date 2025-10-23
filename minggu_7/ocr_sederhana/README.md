@@ -48,4 +48,8 @@ Aplikasi ini terdiri dari empat layar utama:
 3. Scan Screen → Mengaktifkan kamera dan memproses OCR.  
 4. Result Screen → Menampilkan hasil teks yang berhasil dikenali.  
 
+---
 
+# Proyek Flutter: Aplikasi OCR Sederhana - UTS
+
+---
