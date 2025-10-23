@@ -1,11 +1,9 @@
 # Proyek Flutter: Aplikasi OCR Sederhana
 
 --- 
-
 Nama : Nadya Hapsari Putri
 NIM : 2341760179
 No.Absen : 16
-
 ---
 
 ## Deskripsi Singkat
