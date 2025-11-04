@@ -24,21 +24,34 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Master Plan Nadya')),
+      appBar: AppBar(
+        title: const Text(
+          'Master Plan Nadya',
+          style: TextStyle(
+            color: Colors.white, 
+          ),
+        ),
+        backgroundColor: Colors.purple, 
+      ),
       body: _buildList(),
       floatingActionButton: _buildAddTaskButton(),
+      backgroundColor: Colors.purple[50], 
     );
   }
 
   Widget _buildAddTaskButton() {
     return FloatingActionButton(
-      child: const Icon(Icons.add),
+      backgroundColor: Colors.purple, 
+      shape: const CircleBorder(), 
+      child: const Icon(
+        Icons.add,
+        color: Colors.white, 
+      ),
       onPressed: () {
         setState(() {
           plan = Plan(
             name: plan.name,
-            tasks: List<Task>.from(plan.tasks)
-              ..add(const Task()),
+            tasks: List<Task>.from(plan.tasks)..add(const Task()),
           );
         });
       },
@@ -48,10 +61,10 @@ class _PlanScreenState extends State<PlanScreen> {
   Widget _buildList() {
     return ListView.builder(
       controller: scrollController,
-      keyboardDismissBehavior: Theme.of(context).platform ==
-              TargetPlatform.iOS
-          ? ScrollViewKeyboardDismissBehavior.onDrag
-          : ScrollViewKeyboardDismissBehavior.manual,
+      keyboardDismissBehavior:
+          Theme.of(context).platform == TargetPlatform.iOS
+              ? ScrollViewKeyboardDismissBehavior.onDrag
+              : ScrollViewKeyboardDismissBehavior.manual,
       itemCount: plan.tasks.length,
       itemBuilder: (context, index) =>
           _buildTaskTile(plan.tasks[index], index),
@@ -61,6 +74,7 @@ class _PlanScreenState extends State<PlanScreen> {
   Widget _buildTaskTile(Task task, int index) {
     return ListTile(
       leading: Checkbox(
+        activeColor: Colors.purple, 
         value: task.complete,
         onChanged: (selected) {
           setState(() {
