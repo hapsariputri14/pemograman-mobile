@@ -15,7 +15,7 @@ Pada praktikum ini dibuat aplikasi sederhana bernama **Master Plan**, yang bertu
 Tampilan aplikasi berhasil menampilkan daftar tugas dinamis dengan judul **Master Plan Nadya**, tombol **(+)** untuk menambah task, serta kolom teks dan checkbox untuk setiap item.  
 Perubahan pada teks atau status centang langsung memperbarui tampilan melalui penggunaan `setState()`.
 
-![Hasil Akhir Master Plan](https://user-images.githubusercontent.com/example/masterplan.gif)
+![Hasil Akhir Praktikum 1](minggu_10/master_plan/assets/images/praktikum_1.gif)
 
 ---
 
