@@ -52,7 +52,7 @@ class _PlanScreenState extends State<PlanScreen> {
         },
       ),
       floatingActionButton: _buildAddTaskButton(context),
-      backgroundColor: Colors.purple[50],
+      backgroundColor: Colors.white,
     );
   }
 
@@ -63,7 +63,7 @@ class _PlanScreenState extends State<PlanScreen> {
       shape: const CircleBorder(),
       child: const Icon(Icons.add, color: Colors.white),
       onPressed: () {
-        Plan currentPlan = plan;
+        Plan currentPlan = planNotifier.value.firstWhere((p) => p.name == plan.name);
         int planIndex =
             planNotifier.value.indexWhere((p) => p.name == currentPlan.name);
         List<Task> updatedTasks =
@@ -94,7 +94,7 @@ class _PlanScreenState extends State<PlanScreen> {
         activeColor: Colors.purple,
         value: task.complete,
         onChanged: (selected) {
-          Plan currentPlan = plan;
+          Plan currentPlan = planNotifier.value.firstWhere((p) => p.name == plan.name);
           int planIndex =
               planNotifier.value.indexWhere((p) => p.name == currentPlan.name);
 
@@ -112,7 +112,7 @@ class _PlanScreenState extends State<PlanScreen> {
       title: TextFormField(
         initialValue: task.description,
         onChanged: (text) {
-          Plan currentPlan = plan;
+          Plan currentPlan = planNotifier.value.firstWhere((p) => p.name == plan.name);
           int planIndex =
               planNotifier.value.indexWhere((p) => p.name == currentPlan.name);
 

@@ -71,7 +71,11 @@ class _PlanCreatorScreenState extends State<PlanCreatorScreen> {
           const Icon(Icons.note, size: 100, color: Colors.grey),
           Text(
             'Anda belum memiliki rencana apapun.',
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Colors.grey[700],
+                  fontWeight: FontWeight.w500,
+                ),
+            textAlign: TextAlign.center,
           ),
         ],
       );
