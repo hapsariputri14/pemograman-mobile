@@ -1,4 +1,5 @@
 import '../models/data_layer.dart';
+import '../provider/plan_provider.dart';
 import 'package:flutter/material.dart';
 
 class PlanScreen extends StatefulWidget {
@@ -9,7 +10,6 @@ class PlanScreen extends StatefulWidget {
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  Plan plan = const Plan();
   late ScrollController scrollController;
 
   @override
@@ -28,80 +28,82 @@ class _PlanScreenState extends State<PlanScreen> {
         title: const Text(
           'Master Plan Nadya',
           style: TextStyle(
-            color: Colors.white, 
+            color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.purple, 
+        backgroundColor: Colors.purple,
       ),
-      body: _buildList(),
-      floatingActionButton: _buildAddTaskButton(),
-      backgroundColor: Colors.purple[50], 
+      body: ValueListenableBuilder<Plan>(
+        valueListenable: PlanProvider.of(context),
+        builder: (context, plan, child) {
+          return Column(
+            children: [
+              Expanded(child: _buildList(plan)),
+              SafeArea(child: Text(plan.completenessMessage)),
+            ],
+          );
+        },
+      ),
+      floatingActionButton: _buildAddTaskButton(context),
+      backgroundColor: Colors.purple[50],
     );
   }
 
-  Widget _buildAddTaskButton() {
+  Widget _buildAddTaskButton(BuildContext context) {
+    ValueNotifier<Plan> planNotifier = PlanProvider.of(context);
     return FloatingActionButton(
-      backgroundColor: Colors.purple, 
-      shape: const CircleBorder(), 
-      child: const Icon(
-        Icons.add,
-        color: Colors.white, 
-      ),
+      backgroundColor: Colors.purple,
+      shape: const CircleBorder(),
+      child: const Icon(Icons.add, color: Colors.white),
       onPressed: () {
-        setState(() {
-          plan = Plan(
-            name: plan.name,
-            tasks: List<Task>.from(plan.tasks)..add(const Task()),
-          );
-        });
+        Plan currentPlan = planNotifier.value;
+        planNotifier.value = Plan(
+          name: currentPlan.name,
+          tasks: List<Task>.from(currentPlan.tasks)..add(const Task()),
+        );
       },
     );
   }
 
-  Widget _buildList() {
+  Widget _buildList(Plan plan) {
     return ListView.builder(
       controller: scrollController,
-      keyboardDismissBehavior:
-          Theme.of(context).platform == TargetPlatform.iOS
-              ? ScrollViewKeyboardDismissBehavior.onDrag
-              : ScrollViewKeyboardDismissBehavior.manual,
       itemCount: plan.tasks.length,
       itemBuilder: (context, index) =>
-          _buildTaskTile(plan.tasks[index], index),
+          _buildTaskTile(plan.tasks[index], index, context),
     );
   }
 
-  Widget _buildTaskTile(Task task, int index) {
+  Widget _buildTaskTile(Task task, int index, BuildContext context) {
+    ValueNotifier<Plan> planNotifier = PlanProvider.of(context);
     return ListTile(
       leading: Checkbox(
-        activeColor: Colors.purple, 
+        activeColor: Colors.purple,
         value: task.complete,
         onChanged: (selected) {
-          setState(() {
-            plan = Plan(
-              name: plan.name,
-              tasks: List<Task>.from(plan.tasks)
-                ..[index] = Task(
-                  description: task.description,
-                  complete: selected ?? false,
-                ),
-            );
-          });
+          Plan currentPlan = planNotifier.value;
+          planNotifier.value = Plan(
+            name: currentPlan.name,
+            tasks: List<Task>.from(currentPlan.tasks)
+              ..[index] = Task(
+                description: task.description,
+                complete: selected ?? false,
+              ),
+          );
         },
       ),
       title: TextFormField(
         initialValue: task.description,
         onChanged: (text) {
-          setState(() {
-            plan = Plan(
-              name: plan.name,
-              tasks: List<Task>.from(plan.tasks)
-                ..[index] = Task(
-                  description: text,
-                  complete: task.complete,
-                ),
-            );
-          });
+          Plan currentPlan = planNotifier.value;
+          planNotifier.value = Plan(
+            name: currentPlan.name,
+            tasks: List<Task>.from(currentPlan.tasks)
+              ..[index] = Task(
+                description: text,
+                complete: task.complete,
+              ),
+          );
         },
       ),
     );
