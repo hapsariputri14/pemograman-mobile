@@ -27,5 +27,26 @@ Perubahan pada teks atau status centang langsung memperbarui tampilan melalui pe
 
 ---
 
-### Link Repository
-[Klik di sini untuk melihat di GitHub](https://github.com/hapsariputri14/pemograman-mobile/tree/main/minggu_10/master_plan)
+## 🟣 Praktikum 2 – InheritedWidget dan InheritedNotifier  
+
+### Deskripsi Singkat
+Pada praktikum ini, aplikasi **Master Plan** diperbarui dengan memisahkan *data layer* menggunakan **InheritedWidget** agar data dapat diakses lintas widget tanpa harus mengoper variabel secara langsung.  
+Dengan cara ini, model data `Plan` menjadi lebih terpisah dari `PlanScreen`, sehingga pengelolaan state lebih rapi dan efisien.
+
+---
+
+### Hasil Akhir
+Setelah langkah 9, aplikasi menampilkan daftar tugas (*task list*) dan di bagian bawah muncul teks kemajuan seperti:  
+**“2 out of 5 tasks”**  
+yang akan berubah otomatis setiap kali pengguna mencentang atau menambah task baru.
+
+![Hasil Praktikum 2](assets/images/praktikum_2.gif)
+
+---
+
+### Penjelasan Singkat
+- Data `Plan` kini dikelola oleh **PlanProvider** menggunakan `InheritedNotifier`.
+- `ValueListenableBuilder` digunakan untuk membangun ulang tampilan setiap kali data berubah.
+- `SafeArea` ditambahkan untuk menampilkan pesan progres penyelesaian tugas.
+
+---
